@@ -35,8 +35,7 @@ public class AddressBookMain {
             // Display all contacts in the address book
             System.out.println("\nAddress Book:");
             addressBook.displayContacts();
-
-           // scanner.close();
+            scanner.close();
         }
     }
 
