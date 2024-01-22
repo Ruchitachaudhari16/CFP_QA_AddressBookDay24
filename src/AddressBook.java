@@ -3,7 +3,7 @@ import java.util.List;
 import java.util.Scanner;
 
 public class AddressBook {
-    /*UC3 Ability to edit existing contact person using their name*/
+    /* UC4:-Ability to delete a person using person's name - Use Console to delete a person*/
     // Create List of Contacts
     List<Contact> contacts;
 
@@ -58,6 +58,18 @@ public class AddressBook {
             System.out.println("Contact not found. No changes made.");
         }
     }
+    // Delete an existing contact
+    public void deleteContact(String firstName, String lastName) {
+        Contact contactToDelete = findContactByName(firstName, lastName);
+
+        if (contactToDelete != null) {
+            contacts.remove(contactToDelete);
+            System.out.println("Contact deleted successfully.");
+        } else {
+            System.out.println("Contact not found. No changes made.");
+        }
+    }
 }
+
 
 

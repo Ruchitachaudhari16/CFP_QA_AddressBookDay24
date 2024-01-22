@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
 public class AddressBookMain {
-    /*UC3:- Ability to edit existing contact person using their name*/
+    /*UC4:- Ability to delete a person using person's name - Use Console to delete a person*/
         public static void main(String[] args) {
             Scanner scanner = new Scanner(System.in);
 
@@ -47,6 +47,19 @@ public class AddressBookMain {
             addressBook.editContactDetails(editFirstName, editLastName, scanner);
 
             // Display all contacts in the address book after editing
+            System.out.println("\nUpdated Address Book:");
+            addressBook.displayContacts();
+
+            // Delete existing contact using console
+            System.out.println("\nEnter the name of the contact you want to delete:");
+            System.out.print("First Name: ");
+            String deleteFirstName = scanner.nextLine();
+            System.out.print("Last Name: ");
+            String deleteLastName = scanner.nextLine();
+
+            addressBook.deleteContact(deleteFirstName, deleteLastName);
+
+            // Display all contacts in the address book after deletion
             System.out.println("\nUpdated Address Book:");
             addressBook.displayContacts();
 
