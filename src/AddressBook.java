@@ -3,7 +3,10 @@ import java.util.List;
 import java.util.Scanner;
 
 public class AddressBook {
-    /* UC4:-Ability to delete a person using person's name - Use Console to delete a person*/
+    /* UC5:- Ability to add multiple person to Address Book
+- Use Console to add person details one at a time
+- Use Collection Class to maintain multiple
+contact persons in Address Book*/
     // Create List of Contacts
     List<Contact> contacts;
 

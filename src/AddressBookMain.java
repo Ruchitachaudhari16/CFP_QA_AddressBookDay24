@@ -1,7 +1,10 @@
 import java.util.Scanner;
 
 public class AddressBookMain {
-    /*UC4:- Ability to delete a person using person's name - Use Console to delete a person*/
+    /*UC5:- Ability to add multiple person to Address Book
+- Use Console to add person details one at a time
+- Use Collection Class to maintain multiple
+contact persons in Address Book*/
         public static void main(String[] args) {
             Scanner scanner = new Scanner(System.in);
 
@@ -61,6 +64,43 @@ public class AddressBookMain {
 
             // Display all contacts in the address book after deletion
             System.out.println("\nUpdated Address Book:");
+            addressBook.displayContacts();
+
+            // Collect information for multiple contacts using console
+            char addAnother;
+
+            do {
+                // Collect information for a contact using console
+                System.out.println("Enter contact information:");
+                System.out.print("First Name: ");
+                firstName = scanner.nextLine();
+                System.out.print("Last Name: ");
+                lastName = scanner.nextLine();
+                System.out.print("Address: ");
+                address = scanner.nextLine();
+                System.out.print("City: ");
+                 city = scanner.nextLine();
+                System.out.print("State: ");
+                state = scanner.nextLine();
+                System.out.print("ZIP Code: ");
+               zip = scanner.nextLine();
+                System.out.print("Phone Number: ");
+                 phoneNumber = scanner.nextLine();
+                System.out.print("Email: ");
+               email = scanner.nextLine();
+
+                // Create a new contact
+                Contact newContactOne= new Contact(firstName, lastName, address, city, state, zip, phoneNumber, email);
+
+                // Add the contact to the address book
+                addressBook.addContact(newContact);
+
+                System.out.print("Do you want to add another contact? (y/n): ");
+                addAnother = scanner.nextLine().charAt(0);
+            } while (addAnother == 'y' || addAnother == 'Y');
+
+            // Display all contacts in the address book
+            System.out.println("\nAddress Book:");
             addressBook.displayContacts();
 
             scanner.close();
