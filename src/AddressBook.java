@@ -1,7 +1,29 @@
+import java.util.ArrayList;
+import java.util.List;
+
 public class AddressBook {
-    /*Start with Displaying Welcome to Address Book
-Program in AddressBookMain class on START Master Branch */
-    public static void main(String[] args) {
-        System.out.println("Welcome to AddressBook");
+    /* UC1:- Ability to create a Contacts in Address
+Book with first and last names, address,
+city, state, zip, phone number and
+email...*/
+    // Create List of Contacts
+    List<Contact> contacts;
+
+        // Constructor
+        public AddressBook() {
+            contacts = new ArrayList<>();
+        }
+
+        // Add a contact to the address book
+        public void addContact(Contact contact) {
+            contacts.add(contact);
+        }
+
+        // Display all contacts in the address book
+        public void displayContacts() {
+            for (Contact contact : contacts) {
+                System.out.println(contact);
+            }
+        }
     }
-}
+
