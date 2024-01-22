@@ -3,10 +3,7 @@ import java.util.List;
 import java.util.Scanner;
 
 public class AddressBook {
-    /* UC5:- Ability to add multiple person to Address Book
-- Use Console to add person details one at a time
-- Use Collection Class to maintain multiple
-contact persons in Address Book*/
+
     // Create List of Contacts
     List<Contact> contacts;
 
