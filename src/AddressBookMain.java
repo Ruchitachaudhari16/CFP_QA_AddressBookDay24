@@ -1,6 +1,7 @@
 import java.util.Scanner;
 
 public class AddressBookMain {
+    /*UC3:- Ability to edit existing contact person using their name*/
         public static void main(String[] args) {
             Scanner scanner = new Scanner(System.in);
 
@@ -35,7 +36,21 @@ public class AddressBookMain {
             // Display all contacts in the address book
             System.out.println("\nAddress Book:");
             addressBook.displayContacts();
+
+            // Edit existing contact using console
+            System.out.println("\nEnter the name of the contact you want to edit:");
+            System.out.print("First Name: ");
+            String editFirstName = scanner.nextLine();
+            System.out.print("Last Name: ");
+            String editLastName = scanner.nextLine();
+
+            addressBook.editContactDetails(editFirstName, editLastName, scanner);
+
+            // Display all contacts in the address book after editing
+            System.out.println("\nUpdated Address Book:");
+            addressBook.displayContacts();
+
             scanner.close();
         }
-    }
+}
 
