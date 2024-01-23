@@ -7,9 +7,7 @@ System. Each Address Book
 has a unique Name - Use Console to add new Address Book - Maintain Dictionary of Address Book Name to*/
         public static void main(String[] args) {
             Scanner scanner = new Scanner(System.in);
-
-            AddressBook addressBook = new AddressBook();
-
+           AddressBook addressBook = new AddressBook();
             // User Input for a contact
             System.out.println("Welcome to AddressBook");
             System.out.println("contact information:");
@@ -67,8 +65,7 @@ has a unique Name - Use Console to add new Address Book - Maintain Dictionary of
             addressBook.displayContacts();
 
             // Collect information for multiple contacts using console
-            char addAnother;
-
+            char addAnother; 
             do {
                 // Collect information for a contact using console
                 System.out.println("Enter contact information:");
@@ -94,14 +91,16 @@ has a unique Name - Use Console to add new Address Book - Maintain Dictionary of
 
                 // Add the contact to the address book
                 addressBook.addContact(newContact);
-
+               //y/n :- Y- Yes , N- No .
                 System.out.print("Do you want to add another contact? (y/n): ");
                 addAnother = scanner.nextLine().charAt(0);
-            } while (addAnother == 'y' || addAnother == 'Y');
+            }
+                while (addAnother == 'y' || addAnother == 'Y');
 
             // Display all contacts in the address book
             System.out.println("\nAddress Book:");
             addressBook.displayContacts();
+            
             //UC6
             // Collect information for multiple address books using console
             char addAnotherAddressBook;
@@ -121,24 +120,21 @@ has a unique Name - Use Console to add new Address Book - Maintain Dictionary of
 
                 System.out.print("Do you want to add another Address Book? (y/n): ");
                 addAnotherAddressBook = scanner.nextLine().charAt(0);
-            } while (addAnotherAddressBook == 'y' || addAnotherAddressBook == 'Y');
-
-            // Now you can interact with specific address books in the system
-            // For example, to add contacts to a specific address book:
+            } 
+                while (addAnotherAddressBook == 'y' || addAnotherAddressBook == 'Y');
+            //add contacts to a specific address book:
             System.out.print("Enter the name of the Address Book to add a contact: ");
             String selectedAddressBookName = scanner.nextLine();
             AddressBook selectedAddressBook = addressBookSystem.getAddressBook(selectedAddressBookName);
 
-            if (selectedAddressBook != null) {
-                // Proceed to add contacts to the selected address book
-                // (you can modify this part based on your requirements)
-                // ...
-            } else {
+            // it will  add contacts to the selected address book
+            if (selectedAddressBook != null) { 
+               
+            } else 
+            {
                 System.out.println("Error: Address Book not found.");
             }
-
-
-            scanner.close();
+  scanner.close();
         }
 }
 
